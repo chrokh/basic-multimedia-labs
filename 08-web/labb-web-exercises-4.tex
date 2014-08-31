@@ -1,0 +1,469 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{listings}
+\lstdefinelanguage{CSS}{
+    keywords={hover,color,background-image,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width, transform, transition, transition-property, transition-duration, transition-timing-function},
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",        
+    alsoletter={-},
+    alsodigit={:}
+}
+\lstdefinelanguage{JavaScript}{}
+\lstset{
+  basicstyle=\color[rgb]{0.3,0.3,0.3}\ttfamily,
+  keywordstyle=\color[rgb]{0,0.5,0.5},
+  numberstyle=\color[rgb]{0.7,0.7,0.7},
+  commentstyle=\color[rgb]{0.1,0.5,0.1},
+  stringstyle=\color[rgb]{0.6,0.1,0.5},
+  backgroundcolor=\color[rgb]{0.95,0.95,0.95},
+  showstringspaces=false,
+  numbers=left,
+  breaklines,
+  breakatwhitespace,
+}
+
+% No numbering
+\setcounter{secnumdepth}{0}
+
+% Counters for tasks & questions
+\newcounter{taskcounter}
+\setcounter{taskcounter}{0}
+% Tasks
+\newcommand{\task}[1]{
+  \refstepcounter{taskcounter}
+  \addcontentsline{toc}{subsection}{Uppgift \thetaskcounter{} #1}
+  \vspace{4em}~
+  \\\normalfont{\large{\bfseries{\hspace{0.5em}Uppgift \thetaskcounter \hspace{1em}#1}}}\\\\
+}
+
+
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be black
+  linkbordercolor=red,% hyperlink borders will be red
+  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
+
+\begin{document}
+
+  \title{ WEB IV -- Övningsuppgifter }
+  \author{ Grundläggande Multimedia | Uppsala Universitet }
+  \date{}
+  \maketitle
+
+
+  \section{ Introduktion }
+    Även detta dokument innehåller små övningsuppgifter du kan använda för att träna dina multimediakunskaper i HTML-, CSS- och Javascript. Men nu börjar det bli svårare! Har du trubbel med att genomföra denna labb, gå då tillbaka och gör förra! Du kan jobba med samma webbsida i de flesta av de här uppgifterna, men om du vill så är det helt ok att skapa en ny webbsida per uppgift!
+    \paragraph{}
+    För att klara av den här labben behöver du vara inläst på \texttt{variabler} och \texttt{funktioner} samt \texttt{jQuery}-metoden \texttt{\$(document).ready()}. Du kan läsa på om dessa på \href{http://htmlhunden.se}{HTMLHunden.se}.
+
+  \paragraph{}
+  Eftersom vi kommer att jobba med webbsidor är det viktigt att du kommer ihåg några saker.
+    \begin{enumerate}
+      \item Se till att alla dina .html-dokument minst innehåller det minsta du behöver för att vara korrekt enligt HTML5-standarden (se nedan för ett exempel).
+            \lstset{language=HTML}
+            \begin{lstlisting}
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Your title here</title>
+    </head>
+    </body>
+      <!-- Your content here -->
+    </body>
+  </html>
+            \end{lstlisting}
+      \item Se till att du \href{http://htmlhunden.se/#indentering}{indenterar korrekt}!
+      \item Glöm inte att du alltid kan läsa igenom \href{http://htmlhunden.se}{HTMLHunden} om du känner dig förvirrad.
+    \end{enumerate}
+
+
+
+
+
+  \section{ Uppgifter }
+  Nedan följer uppgifterna. Försök att hinna med allihopa!
+
+
+
+
+
+
+  \task{ Välja element }
+    Vi ska först träna på att använda css-selectors. Använd följande html-fil:
+    \lstset{language=HTML}
+    \begin{lstlisting}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your title here</title>
+  </head>
+  </body>
+    <h1>Hello world</h1>
+    <p>This is my page about superheroes.</p>
+    <p>And here is a long text which you may replace with something longer like a set of lorem ipsum.</p>
+    <div>
+      <p>Some superheroes are..</p>
+      <ul>
+        <li><span>Bat</span>man</li>
+        <li><span>Wonder</span>woman</li>
+        <li><span>Iron</span> man</li>
+        <li><span>Modesty</span> Blaise</li>
+      </ul>
+      <div>
+        <p>And here's some more obscure superheroes..</p>
+        <ul>
+          <li><span>Powerpuff</span> girl 1</li>
+          <li><span>No</span>manslander</li>
+          <li><span>Wallpaper</span> woman</li>
+          <li><span>Void</span> vendor</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+  \end{lstlisting}
+  \paragraph{}
+  Skapa nu en css-fil och koppla in den till dokumentet. Uppgiften går ut på att skriva följande CSS-regler, \textbf{utan} att förändra html-filen. Du får alltså \textbf{inte} lägga till klasser och ID:n i html-filen.
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Gör rubriken (\texttt{<h1>}) understruken, och ge den en egen färg.
+        \item Gör alla \texttt{<span>}-taggar som ligger i \texttt{<ul>}-listor fetstilta.
+        \item Ge den \texttt{<div>} som innehåller den \textbf{andra} \texttt{<ul>}-listan en annan bakgrundsfärg.
+        \item Ge den \texttt{<div>} som innehåller den \textbf{första} \texttt{<ul>}-listan en annan bakgrundsfärg.
+        \item Gör så att första \texttt{<p>}-taggen efter rubriken har en lite större font-size och lite ljusare färg. Som en ingress i en tidning.
+        \item Gör \textbf{vartannat} listelement i den \textbf{första} listan ljusgrått, och \textbf{vartannat} listelement i den \textbf{första} listan mörkgrått.
+        \item Gör \textbf{vartannat} listelement i den \textbf{andra} listan rött, och \textbf{vartannat} listelement i den \textbf{andra} listan orange:t.
+      \end{enumerate}
+
+
+
+
+
+  \task{ setTimeout }
+    JavaScript-metoden \texttt{setTimeout()} använder vi när vi vill fördröja exekveringen av någonting. Vi använder den som så:
+    \lstset{language=[Sharp]C}
+    \begin{lstlisting}
+setTimeout(function(){
+  // here is where we can do stuff
+  alert("This message will be shown after 3000 ms");
+  // like the alert box above
+}, 3000);
+    \end{lstlisting}
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa ett .js-dokument
+        \item Koppla in .js-dokumentet till ditt .html-dokument
+        \item Skicka ett alert-meddelande som i ovan exempel efter 3 sekunder.
+      \end{enumerate}
+
+
+
+  \task{ document fade out }
+    Vi ska nu arbeta med jQuery.
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Koppla in jQuery till ditt .html-dokument
+        \item Skicka upp en alert-box med ett meddelande såsom "Hello from jQuery!" \textbf{när jquery \$(document).ready() är klar!}
+      \end{enumerate}
+
+
+
+
+
+  \task{ fadeOut, fadeIn }
+    Vi ska nu försöka fade:a ut och in rubriken. Använd dig av jquery's metoder \texttt{fadeOut()} och \texttt{fadeIn()}.
+
+    Anledningen till att vi innan tränade på css-selectors är att jQuery arbetar med just css-selectors. För att "välja" en html-nod genom jQuery så använder vi just css-selectors.
+
+     \begin{lstlisting}
+// selects all links
+$('a');
+
+// selects all <ul>-elements inside of <div>-elements
+$('div ul');
+
+// selects all elements with the ID "title"
+$('#title');
+    \end{lstlisting}
+
+    \paragraph{}
+    Vi använder \texttt{fadeIn()} och \texttt{fadeOut()} så här:
+
+    \begin{lstlisting}
+// fade:ar ut alla <li>-element under 4 sekunder
+$('li').fadeOut(4000);
+
+// fade:ar in alla element med klassen awesome
+$(.awesome).fadeIn(2000);
+    \end{lstlisting}
+
+    \paragraph{}
+    Om vi vill göra någonting när fade:en är klar behöver vi använda \texttt{callbacks}, t.ex. så här:
+    \begin{lstlisting}
+// fade:ar ut hela <body> och skickar sen upp en alert-box!
+$('body').fadeOut(8000, function(){
+  alert("OMG IT'S ALL GONE");
+});
+    \end{lstlisting}
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item När HTML:en är färdigladdad \texttt{\$document.ready()} så ska rubriken \texttt{<h1>} fade:as ut.
+        \item När \texttt{<h1>}-taggen har fade:ats ut helt, ska den sedan fade:as in.
+      \end{enumerate}
+
+
+
+
+  \task{ En funktion }
+    Nu ska vi träna på funktioner. Vi kan definiera funktioner som så:
+
+    \begin{lstlisting}
+var fadeOutBody = function(){
+  $('body').fadeOut(8000); 
+}
+    \end{lstlisting}
+
+    Och sedan anropa den som så:
+
+    \begin{lstlisting}
+fadeOutBody();
+    \end{lstlisting}
+
+    Vi kan även förstås definiera flera funktioner och sedan anropa funktioner ifrån funktioner. Föreställ dig att vi utgår ifrån följande kod:
+\begin{lstlisting}
+$('body').fadeOut(function(){
+  alert("OMG FADE OUT!");
+});
+\end{lstlisting}
+Då skulle vi kunna bryta upp de olika delarna i olika funktioner som separat utför arbete. Som så:
+\begin{lstlisting}
+var fadeOutBody = function(){
+  $('body').fadeOut(8000, function(){
+    alertMessage();
+  });
+}
+
+var alertMessage = function(){
+  alert("OMG FADE OUT!");
+}
+
+// Now when we call fadeOutBody();
+// first body will fade out
+// then we'll get the alert message
+// just like before
+fadeOutBody();
+\end{lstlisting}
+
+Eftersom den \texttt{anonyma funktionen} på rad 2 inte gjorde någonting annat i sin kropp (rad 3) än att anropa en annan funktion så hade vi lika gärna kunnat skicka in den funktionen snarare än den anonyma. Om detta låter förvirrande, strunta i det och fortsätt arbeta på samma sätt som ovan. Men vad vi hade kunnat skriva är alltså...
+
+\begin{lstlisting}
+var fadeOutBody = function(){
+  $('body').fadeOut(8000, alertMessage);
+}
+\end{lstlisting}
+
+Nästa överkurs-kommentar är att vi även hade kunnat skicka den andra funktionen som argument till den första. Som så:
+
+\begin{lstlisting}
+var fadeOutBody = function(theCallback){
+  $('body').fadeOut(8000, theCallback);
+}
+
+var alertMessage = function(){
+  alert("OMG FADE OUT!");
+}
+
+// Now when we call fadeOutBody();
+// it will expect us to also pass it another
+// function which will act as a callback
+fadeOutBody(alertMessage);
+\end{lstlisting}
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Skriv en funktion du kallar \texttt{fadeOutBody()} som fade:ar ut \texttt{<body>}.
+        \item Skriv en funktion du kallar \texttt{fadeInBody()} som fade:ar in \texttt{<body>}.
+        \item Använd \texttt{setTimeout} för att anropa funktionen \texttt{fadeOutBody()} efter \texttt{1000 ms}.
+        \item Använd \texttt{setTimeout} för att anropa funktionen \texttt{fadeInBody()} efter \texttt{3000 ms}.
+      \end{enumerate}
+
+
+
+
+  \task{ fadeOut, fadeIn, forever }
+    Denna uppgift går egentligen ut på samma sak som ovan. Men poängen är nu att när body är utfade:ad så ska den fade:as in. Och vice versa. För evigt. Lite som att vi skapar en "blink"-effekt.
+
+    Tips: Tänk på att metoder kan anropa andra metoder, och att du antagligen inte behöver \texttt{setTimeout()}.
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item När \texttt{<body>} har fade:ats ut, ska den fade:as in igen.
+        \item När \texttt{<body>} har fade:ats in, ska den fade:as ut igen.
+        \item Och så fortsätter det...
+      \end{enumerate}
+
+    Tips: Tänk på de två första punkterna ovan som funktioner.
+
+
+
+
+
+  \task{ Append }
+    Vi ska nu öva på att dynamiskt förändra content på våra sidor. När man klickar på en länk så ska sidan förändras.
+
+    För att lägga till content någonstans på en sida så använder vi jQuery-funktionen \texttt{append()}. Som så...
+
+    \begin{lstlisting}
+// First we select an element,
+// then we call the append-method on the element
+// and give it the html string for header.
+$('body').append('<h1>Hello world</h1>');
+    \end{lstlisting}
+
+    Notera att vi nu appendar content till \texttt{<body>}, men vi hade lika gärna kunnat appenda content till vilket annat element som helst. Prova kör ovan kod själv!
+
+    För att kunna lösa uppgiften behöver vi även ta reda på hur jQuery's klick-metod fungerar. Den fungerar som så här:
+
+    \begin{lstlisting}
+// First we select an element,
+// then we call the click-method
+// then we give it a function
+$('a').click(function(){
+
+  // which sends an alert box
+  alert("Hello world!");
+
+  // then we return false so that the browser
+  // will not "follow" the actual link
+  //     (i.e. navigate away from the page)
+  return false;
+});
+    \end{lstlisting}
+
+    Notera alltså att vi även i detta exempel valt en viss selector, i detta fall \texttt{<a>}-elementet, alltså alla länkar. Men vi hade förstås kunnat binda denna klickmetod till ett specifikt \texttt{<a>}, eller något helt annat element.
+
+    Tips: Glöm alltså inte att ha \lstinline{return false;} i din klick-metod. Prova utan så förstår du varför.
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Lägg till två länkar \texttt{<a>}-element.
+        \item När man klickar på den första länken så ska en text (\texttt{<p>})läggas till i slutet av sidan.
+        \item När man klickar på den andra länken så ska en bild läggas till i slutet av sidan.
+      \end{enumerate}
+
+
+
+
+
+  \task{ Positionering }
+    Nu ska vi göra en snabb övning i absolut positionering med css.
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Lägg till två bilder i ditt .html-dokument
+        \item Skriv en regel i ditt .css-dokument som med hjälp av css-regeln \texttt{position: fixed;} positionerar första bilden i mitten av sidan. Oavsett hur användaren scrollar.
+        \item Skriv en regel i ditt .css-dokument som med hjälp av css-regeln \texttt{position: absolute;} positionerar andra bilden högst upp till höger på sidan, men som inte "ligger kvar" när användaren scrollar. Bilden ska alltså inte vara \texttt{fixed}.
+      \end{enumerate}
+
+
+
+  \task{ css()-metoden }
+    Vi ska träna på att förändra sidans css genom jQuery. För att applicera css på ett element genom jQuery använder vi metoden \texttt{css()}. Som nedan:
+
+    \begin{lstlisting}
+// First we select an element,
+// then we call the css-method
+// passing it a css property as the 1st argument
+// and a suitable value as the 2nd argument
+$('p').css('border', '14px solid blue');
+    \end{lstlisting}
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Lägg till ytterligare en bild i ditt .html-dokument
+        \item Lägg till ytterligare en länk i ditt .html-dokument
+        \item Gör så att bilden med hjälp av \texttt{position: absolute;} positioneras längst ned till vänster, när man klickar på länken.
+      \end{enumerate}
+
+
+
+
+
+  \task{ Random }
+  Skriv en metod som returnerar ett slumpmässigt tal mellan 75 och 200. Kalla metoden \texttt{randomNumber}.
+
+
+
+  \task{ Appending cats }
+   I denna uppgift ska vi göra så att sidan fylls med bilder på katter allteftersom användaren klickar på en länk.
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Lägg till ytterligare en länk i ditt .html-dokument
+        \item Skriv en javascript-funktion som du döper till \lstinline{addRandomCat}.
+        \item Metoden ska append:a en bild på en katt genom (t.ex. ifrån \href{http://placekitten.com}{placekitten.com}) till \lstinline{<body>}
+        \item Metoden som appendar bilder, ska använda sig av metoden \lstinline{randomNumber} du tidigare skrev, för att placera bilden på en slumpmässig position. Detta genom \lstinline{position: absolute;} som vi tidigare tränade på.
+        \item När användaren klickar på länken ska metoden \lstinline{addRandomCat} köras.
+        \item Med andra ord, när användaren klickar på länken ska alltså en bild på en katt läggas till i \lstinline{<body>} på en slumpmässigt utvald position.
+      \end{enumerate}
+
+
+
+
+
+
+
+  \task{ Dismissable box }
+    Nu ska vi skapa en \texttt{<div>} som går att "stänga".
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Lägg till en \texttt{<div>} till ditt dokument.
+        \item Ge den klassen \texttt{.closable}.
+        \item Lägg till en länk (\texttt{<a>}) i \texttt{<div>}:en.
+        \item När användaren klickar på länken, ska boxen försvinna.
+      \end{enumerate}
+
+    TIPS: Kolla på jQuery-metoderna \texttt{.hide()} och/eller \texttt{.remove()}.
+
+
+
+
+  \task{ Mouse-tracker }
+    Denna uppgift går ut på att skriva ut muspekarens position på skärmen.
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa ytterligare ett \texttt{<div>}-element
+        \item Lägg till två \texttt{<p>}- eller \texttt{<span>}-element i \texttt{<div>}:en.
+        \item Ge de två elementen ID:na \texttt{mouse-x} resp. \texttt{mouse-y}.
+        \item Använd jQuery för att hela tiden uppdatera dessa två värden med muspekarens nuvarande position.
+      \end{enumerate}
+
+    TIPS: Kolla på jQuery-metoden \texttt{.mousemove()}.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+\end{document}

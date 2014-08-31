@@ -1,0 +1,254 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{listings}
+\lstdefinelanguage{CSS}{
+    keywords={hover,color,background-image,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width, transform, transition, transition-property, transition-duration, transition-timing-function},
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",        
+    alsoletter={-},
+    alsodigit={:}
+}
+\lstdefinelanguage{JavaScript}{}
+\lstset{
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color[rgb]{0.133,0.545,0.133},
+  stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be black
+  linkbordercolor=red,% hyperlink borders will be red
+  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
+
+\begin{document}
+
+  \title{ WEB III -- Övningsuppgifter }
+  \author{ Grundläggande Multimedia | Uppsala Universitet }
+  \date{}
+  \maketitle
+
+
+  \section{ Introduktion }
+    Detta dokument innehåller små övningsuppgifter du kan använda för att träna dina multimediakunskaper i HTML-, CSS- och Javascript. Se till skapa en \emph{ny mapp för varje labbuppgift} under denna labb!
+
+
+  \paragraph{}
+  Eftersom vi kommer att jobba med webbsidor är det viktigt att du kommer ihåg några saker.
+    \begin{enumerate}
+      \item Se till att alla dina .html-dokument minst innehåller det minsta du behöver för att vara korrekt enligt HTML5-standarden (se nedan för ett exempel).
+            \lstset{language=HTML}
+            \begin{lstlisting}
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Your title here</title>
+    </head>
+    </body>
+      <!-- Your content here -->
+    </body>
+  </html>
+            \end{lstlisting}
+      \item Se till att du \href{http://htmlhunden.se/#indentering}{indenterar korrekt}!
+      \item Glöm inte att du alltid kan läsa igenom \href{http://htmlhunden.se}{HTMLHunden} om du känner dig förvirrad.
+    \end{enumerate}
+
+
+
+
+
+  \section{ Uppgifter }
+  Nedan följer uppgifterna. Försök att hinna med allihopa!
+
+
+
+
+  \subsection{ Video genom tredjepartstjänst }
+    I den här övningen tränar vi på att använda tredjepartslösningar för videos. Vi prövar på att bädda in både filmer ifrån Youtube och ifrån Vimeo. Tänk på att båda sidorna har information om hur du går tillväga för att "bädda in" deras filmer. En snabb googling borde lösa problemet.
+
+    \paragraph*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en ny html-sida
+        \item Leta rätt på en film ifrån YouTube.
+        \item Ta reda på hur man "bäddar in" youtube-filmer i HTML.
+        \item Bädda in youtube-filmen i din .html-sida.
+        \item Leta rätt på en film ifrån Vimeo.
+        \item Ta reda på hur man "bäddar in" vimeo-filmer i HTML
+        \item Bädda in vimeo-filmen i din .html-sida.
+      \end{enumerate}
+
+
+
+
+  \subsection{ HTML5 Audio }
+    I den här övningen ska vi använda oss av audio-elementet i HTML5. Du hittar information om hur audio-elementet fungerar bl.a. hos \href{http://www.w3schools.com/html/html5_audio.asp}{W3Schools}.
+
+    \paragraph{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en ny html-sida
+        \item Leta rätt på en ljudfil i mp3-format
+        \item Placera ljudfilen i samma mapp som din html-sida
+        \item Använd audio-elementet för att spela upp ljudet på din html-sida
+      \end{enumerate}
+
+
+
+
+  \subsection{ HTML5 Video }
+    I den här övningen ska vi använda oss av video-elementet i HTML5. Du hittar information om hur video-elementet fungerar bl.a. hos \href{http://www.w3schools.com/html/html5_video.asp}{W3Schools}.
+
+    \paragraph{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en ny html-sida
+        \item Leta rätt på en videofil i ett format som stödjs av HTML5 video.
+        \item Lägg INTE in videofilen i din mapp utan kopiera istället URL:en till videon.
+        \item Använd video-elementet i din html-fil och peka src-attributet till den URL du tidigare kopierade.
+      \end{enumerate}
+
+
+
+
+
+
+  \subsection{ Mouse Over med CSS }
+    \paragraph{}
+    Vi ska nu träna på att göra mouseover-effekter med hjälp av css. Dels för länkar men även för lite andra grejer. När vi gör hovers i CSS så använder vi något som kallas för \emph{pseudo-elements}. Nedan är ett exempel:
+    \lstset{language=CSS}
+    \begin{lstlisting}
+  #my-button:hover{
+    color: red;
+  }
+    \end{lstlisting}
+    Ovan kod css-regel gör alltså att vi applicerar stilregeln \emph{color: red; } på elementet \emph{\#my-button}, MEN endast när den är \emph{hover}:ed.
+
+    \subsubsection*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en ny .html-sida
+        \item Skapa en ny .css-fil
+        \item Koppla in din .css-fil till din .html-sida
+        \item Lägg till en \emph{<div>} i din .html-sida
+        \item Lägg till en rubrik (\emph{<h1>}) i din div
+        \item Lägg till ett stycke text (\emph{<p>}) i din div
+        \item Lägg till en länk (\emph{<a>}) i din div
+        \item Lägg till en bild (\emph{<img>}) i din div
+        \item Skriv en css-regel som gör att bilden får en ram när man håller över den med musen.
+        \item Skriv en css-regel som gör att bildens opacitet sänks när man håller över den med musen.
+        \item Skriv en css-regel som gör att länken byter färg när man håller över den med musen.
+        \item Skriv en css-regel som gör att länken blir fetstilt när man håller över den med musen.
+        \item Skriv en css-regel som gör att div:en byter bakgrundsfärg när man håller över den med musen.
+        \item Skriv en css-regel som gör att texten i div:en byter färg när man håller musen över div:en.
+        \item Skriv en css-regel som gör att bilden i div:en ändrar storlek när man håller musen över div:en.
+        \item Se till att du inte upprepar dig i dina css-regler.
+          Med det menas att följande css...
+          \begin{lstlisting}
+  h1{
+    color: red;
+  }
+  h1{
+    font-weight:bold;
+  }
+          \end{lstlisting}
+          ... med fördel alltså kan och bör skrivas som följande:
+          \begin{lstlisting}
+  h1{
+    color: red;
+    font-weight: bold;
+  }
+          \end{lstlisting}
+      \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+  \subsection{ Kontrollera ljuduppspelning genom JavaScript }
+    \paragraph{}
+    I denna uppgift ska vi försöka skapa egna "kontroller" i en HTML-sida som vi kan använda för att genom JavaScript kontrollera uppspelningen av HTML5-ljud.
+
+    \subsubsection*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en ny .html-sida
+        \item Leta rätt på en ljudfil och spela upp den på din sida genom HTML5 audio.
+        \item Skapa tre länkar \emph{<a>} eller buttons \emph{<button>}: PLAY, JUMP FORWARD, JUMP BACKWARDS
+        \item Skapa en ny .js-fil och koppla in den till ditt html-dokument.
+        \item Vi ska nu genom JavaScript försöka kontrollera uppspelningen av vårt HTML5-ljud. Tanken är alltså att när användaren trycker på PLAY så börjar ljudet spelas upp, och när användaren trycker på PLAY igen så pausas ljudet. När användaren trycker på JUMP FORWARD så hoppar spelarhuvudet framåt någon/några sekunder. Och när användaren trycker JUMP BACKWARDS så hoppas spelhuvudet bakåt någon/några sekunder.
+        \item Konsultera internet för att hitta \href{http://msdn.microsoft.com/en-us/library/ie/hh924823(v=vs.85).aspx}{guider som förklarar hur man kan interagera med HTML5 audio genom JavaScript}.
+      \end{enumerate}
+
+
+
+
+
+
+
+  \subsection{ Kontrollera videouppspelning genom JavaScript }
+    \paragraph{}
+    Denna uppgift går ut på att göra exakt samma sak som i uppgiften där vi ska kontrollera HTML5-uppspelning med JavaScript förutom uppgiften nu är att kontrollera \href{http://msdn.microsoft.com/en-us/library/ie/hh924823(v=vs.85).aspx}{HTML5-videouppspelning med JavaScript}.
+
+
+
+
+
+
+
+
+  \subsection{ Mouse Over med jQuery }
+    \paragraph{}
+    I denna uppgift ska vi göra exakt samma saker som i Mouse Over-uppgiften som fokuserade på CSS. Fast istället för att använda CSS ska vi nu använda javascript-biblioteket \href{http://jquery.com/download/}{jQuery}.
+
+    \subsubsection*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en ny .html-sida
+        \item Ladda ned \href{http://code.jquery.com/jquery-1.10.2.min.js}{jQuery} och spara filen som \emph{jquery.js}, i den mapp som innehåller din nya .html-sida.
+        \item Koppla in \emph{jquery.js} till ditt html-dokument som precis vilken annan javascript-fil som helst.
+        \item Skapa en ny .js-fil, döp den till \emph{main.js} och öppna den. Det är nu här vi ska skriva vår javascript-kod som använder sig av jQuery-biblioteket.
+        \item Skriv följande kod i \emph{main.js}:
+          \lstset{language=JavaScript}
+          \begin{lstlisting}
+  $(function(){
+    alert("Hello from jQuery!");
+    // Put all your code here
+  });
+          \end{lstlisting}
+        \item Om du nu öppnar din .html-sida i en webbläsare bör du få ett hälsningsmeddelande ifrån webbläsaren.
+        \item Ta bort \emph{alert}-raden.
+        \item Skriv istället följande kod i \emph{main.js} där texten "Put all your code here står".
+          \begin{lstlisting}
+  $('a').hover(function(){
+    (this).css('color', 'red');
+  });
+          \end{lstlisting}
+        \item Ovan kod lägger alltså, genom jQuery, till en event-lyssnare på alla \emph{<a>}-taggar. Således kommer den anonyma funktionen köras när användaren hovrar över en a-tagg.Funktionen kommer först att välja det element som hovrats, och sedan säga åt det att tilldela den stilregeln som säger att dess färg ska vara röd.
+        \item Låt oss prova en regel till. Klistra även in följande kod i \emph{main.js}:
+        \begin{lstlisting}
+  $('img').hover(function(){
+    $(this).css('opacity', 0.5);
+  });
+        \end{lstlisting}
+        \item Fortsätt nu att skriva mer javascript tills du uppnåt all funktionalitet som vi i förra uppgiften uppnådde genom css.
+      \end{enumerate}
+
+
+
+
+
+
+
+
+ 
+
+\end{document}
