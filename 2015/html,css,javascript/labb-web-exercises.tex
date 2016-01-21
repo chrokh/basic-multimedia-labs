@@ -1,0 +1,254 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{listings}
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be black
+  linkbordercolor=red,% hyperlink borders will be red
+  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
+
+\begin{document}
+
+  \title{ WEB -- Övningsuppgifter }
+  \author{ Grundläggande Multimedia | Uppsala Universitet }
+  \date{}
+  \maketitle
+
+  \paragraph{}
+  Detta dokument innehåller små övningsuppgifter du kan använda för att träna dina HTML-, CSS- och Javascript-kunskaper.
+
+
+  \newpage
+  \section{ Ett enkelt dokument }
+    \paragraph{}
+    Skapa en enkel HTML-sida som innehåller allt i nedanstående lista. I denna övning håller vi oss till HTML och ignorerar CSS och dyl.
+
+    \subsection*{Sidan ska innehålla}
+      \begin{enumerate}
+        \item En rubrik
+        \item En paragraf
+        \item En numrerad lista
+        \item En onumrerad lista
+        \item En nästlad lista (lista i en lista)
+        \item En \href{https://www.google.se/search?q=kitten+meme&um=1&ie=UTF-8&hl=sv&tbm=isch&source=og&sa=N&tab=wi&ei=jUhAUt3YHYPYtAawqYGwDQ}{bild}
+        \item En länk till en annan webbsida på nätet
+      \end{enumerate}
+
+
+  \newpage
+  \section{ Navigation }
+    \paragraph{}
+    I denna uppgift jobbar vi länkar. Tanken är att du ska skapa tre separata sidor -- låt oss kalla dem \texttt{A}, \texttt{B}, och \texttt{C}. Varje sida ska innehålla länkar till någon eller några av de andra sidorna. För länkarna gäller följande:
+
+    \subsection*{Uppgiften}
+      \begin{enumerate}
+        \item \texttt{A} ska länka till \texttt{B} och \texttt{C}
+        \item \texttt{B} ska länka till \texttt{C} och \texttt{A}
+        \item \texttt{C} ska länka till \texttt{A}
+      \end{enumerate}
+
+    \paragraph{}
+    Se till att du skriver någonting på varje sida för att enklare hålla koll på vilken sida som är vilken.
+
+
+
+
+  \newpage
+  \section{ Koppla in ett stylesheet }
+    \paragraph{}
+    I denna uppgift kopplar vi in ett CSS-dokument.
+
+    \subsection*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en \texttt{.html}-fil
+        \item Skapa en \texttt{.css}-fil
+        \item Lägg följande kod i \texttt{.css}-filen:
+          \begin{lstlisting}
+  body{
+    background: red;
+  }
+          \end{lstlisting}
+        \item Om du nu kopplar in \texttt{.css}-filen i \texttt{.html} med hjälp av \texttt{<link>}-elementet så bör sidan vara röd när du öppnar den i en webbläsare.
+        \item Lägg in lite content i din \texttt{.html}-fil, såsom text, länkar, rubriker etc. och experimentera lite med CSS genom att skriva olika regler för olika element ditt \texttt{.html}-dokument.
+      \end{enumerate}
+
+
+
+  \newpage
+  \section{ Blogginlägg }
+    \paragraph{}
+    I denna uppgift kopplar vi in ett CSS-dokument och arbetar med sidans visuella stil. Utgå ifrån resultatet ifrån ovan uppgift eller skapa en helt ny HTML-sida. Tanken är vi ska skapa en sida som ser ut som ett blogginlägg. Försök få sidan att se så professionell ut som möjligt. Alltså inget Comic Sans :)
+
+    \subsection*{Sidan ska innehålla}
+      \begin{enumerate}
+        \item Bloggpostens titel
+        \item Meta-information om bloggposten, där följande "keywords" ska särskiljas med hjälp av en annan färg ("färgkodas").
+          \begin{enumerate}
+            \item Skribent
+            \item Datum
+            \item Kategori
+          \end{enumerate}
+        \item En ingress som är visuellt särskiljd ifrån själva inlägget (genom skiljd storlek, typsnitt, eller dyl.)
+        \item En lång brödtext (det faktiska blogginlägget) bestående av flera stycken. Följande behöver förekomma i brödtexten.
+          \begin{enumerate}
+            \item Minst ett ord/begrepp i \emph{Fetstil}
+            \item Minst ett ord/begrepp i \emph{Italics}
+            \item Minst en bild
+            \item Minst en \emph{Blockquote}
+          \end{enumerate}
+      \end{enumerate}
+
+
+
+
+
+  \newpage
+  \section{ Embedded content }
+    \paragraph{}
+    Nu ska vi öva på att bädda in tredje-parts-content. Skapa en tom sida och prova på att "bädda in" olika material.
+
+    \subsection*{Exempel på material som kan bäddas in}
+      \begin{itemize}
+        \item YouTube-film
+        \item Vimeo-film
+        \item En annan sida genom en \texttt{<iframe>}
+      \end{itemize}
+
+    \subsection*{Överkurs}
+      Fundera gärna över vilka risker och säkerhetsimplikationer som ovan övningar medför.
+
+
+
+
+
+
+  \newpage
+  \section{ Centrera ett element }
+    \paragraph{}
+    I denna övning tränar vi på visuell centrering.
+
+    \subsection*{Uppgiften}
+      \begin{enumerate}
+        \item
+          Det som ska centreras är:
+          \begin{enumerate}
+            \item En rubrik
+            \item En bild
+            \item En brödtext
+          \end{enumerate}
+        \item Brödtexten ska vara "vänsterjusterad" i relation till rubriken och bilden men ändå vara i mitten av skärmen.
+        \item Prova gärna att lösa denna uppgift genom alla tre följande metoder:
+          \begin{enumerate}
+            \item \texttt{ text-align:center; }
+            \item \texttt{ position:absolute; }
+            \item \texttt{ float:left; } och \texttt{ float:right }
+          \end{enumerate}
+      \end{enumerate}
+
+
+
+
+  \newpage
+  \section{ Spalter \& kolumner }
+    \paragraph{}
+    Denna uppgift går ut på att försöka dela upp en webbsida i spalter. Lägg ut ett antal (börja förslagsvis med två) \texttt{<div>}:ar och ge de genom CSS bredd, höjd och bakgrunds-färg. Detta så att vi kan skilja dem åt.
+
+    \subsection*{Uppgiften}
+      Om du har två \texttt{<div>}:ar är målet att få de bredvid varandra så att den ena \texttt{<div>}:en tar upp 50\% av skärmens bredd och den andra resterande utrymme. Tillsammans ska de täcka upp hela webbläsarens bredd.
+      \begin{enumerate}
+        \item Lägg 2 st \texttt{<div>}:ar bredvid varandra.
+        \item Lägg 3 st \texttt{<div>}:ar bredvid varandra.
+        \item Gör 2 st rader där den första raden innehåller 2 st kolumner och den andra raden 3 st kolumner. Med kolumner menas här \texttt{<div>}:ar bredvid varandra på samma sätt som ovan.
+      \end{enumerate}
+      \paragraph{}
+      Precis som i uppgiften ovan kan vi lösa detta problem på många olika sätt. Prova gärna olika metoder!
+
+
+
+  \newpage
+  \section{ Använda ramverk för layout }
+    \paragraph{}
+    Denna uppgift går ut på att göra precis samma sak som i ovan uppgift fast genom ett befintligt ramverk. Såsom
+    \href{http://getbootstrap.com/}{Twitter Bootstrap},
+    \href{http://foundation.zurb.com/}{Foundation},
+    eller valfritt annat CSS-ramverk med öppen källkod.
+
+    \subsection*{Uppgiften}
+      Se föregående uppgift.
+
+
+
+
+
+  \newpage
+  \section{ Koppla in en Javascript-fil }
+    \paragraph{}
+    I denna uppgift kopplar vi in ett Javascript-dokument.
+
+    \subsection*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en \texttt{.html}-fil
+        \item Skapa en \texttt{.js}-fil
+        \item Lägg följande kod i \texttt{.js}-filen:
+          \begin{lstlisting}
+  var name = "Your name";
+  alert("Hello " + name);
+          \end{lstlisting}
+        \item Om du nu kopplar in \texttt{.js}-filen i \texttt{.html} med hjälp av \texttt{<script>}-elementet så bör du få ett välkomnstmeddelande när du öppnar Javascript-sidan.
+        \item Experimentera gärna lite med \texttt{.js}-filen. Försök t.ex. få ditt namn att visas istället. Eller ett slumpmässigt nummer.
+      \end{enumerate}
+
+
+
+
+  \newpage
+  \section{ Använda ett JavaScript-ramverk }
+    \paragraph{}
+    Denna övning går ut på att koppla in ett tredjepartsramverk för JavaScript såsom
+    \href{http://jquery.com/download/}{jQuery}, eller
+    \href{http://mootools.net/}{MooTools}
+
+    \subsection*{Uppgifter}
+      \begin{enumerate}
+        \item Hämta valfritt js-ramverk
+        \item Skapa en html-sida och "koppla" js-ramverket till din html-sida
+        \item Skapa en till JavaScript-fil som du kopplar in till html-sidan (det är i denna fil vi kommer använda ramverket)
+        \item Använd js-ramverket till att försöka uppnå en eller flera av nedanstående funktionaliteter:
+          \begin{enumerate}
+            \item Lägg till en länk. När man klickar på länken ska en text visas i en \texttt{alert}-ruta.
+            \item Lägg till en länk på sidan. När man klickar på länken ska bakgrundsfärgen ändras till en slumpmässig färg (ny färg varje gång)
+            \item Lägg till en bild på sidan. När man klickar på bilden ska den bli dubbelt så stor. Klickar man igen ska den återgå till den mindre storleken.
+          \end{enumerate}
+      \end{enumerate}
+
+
+
+  \newpage
+  \section{ Animering \& interaktion }
+    \paragraph{}
+    Denna övning utforskar olika sätt att animera. Skapa ett nytt html-dokument med tillhörande css- och JavaScript-filer. Skapa en \texttt{<div>} i html-dokumentet och skriv en text i \texttt{<div>}:en. Använd css för att ge boxen en bakgrundsfärg.
+
+    \subsection*{Uppgiften}
+      \begin{enumerate}
+        \item Animera boxen så att den "glider in" på sidan.
+        \item Lägg till en länk i boxen (förslagsvis ett kryss). När man klickar på länken ska boxen "glida ut" igen.
+      \end{enumerate}
+
+      \paragraph{}
+      Vi kan närma oss den här uppgiften ifrån två huvudsakliga håll. Antingen försöker vi lösa den med hjälp av CSS3. Eller så försöker vi lösa den med JavaScript (rimligen m.h.a. ett ramverk). Försök gärna båda sätten!
+
+      \paragraph{}
+      Tips på \texttt{jQuery}-metoder som kan användas är förslagsvis (\texttt{slideDown}, \texttt{slideUp}, \texttt{slideToggle}, eller \texttt{animate})
+
+ 
+
+ % IDEAS:
+ % responsive
+
+
+\end{document}

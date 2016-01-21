@@ -1,0 +1,202 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{listings}
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be black
+  linkbordercolor=red,% hyperlink borders will be red
+  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
+
+\begin{document}
+
+  \title{ HTML och CSS -- Övningsuppgifter }
+  \author{ Grundläggande Multimedia | Uppsala Universitet }
+  \date{}
+  \maketitle
+
+  \paragraph{}
+  Detta dokument innehåller små övningsuppgifter du kan använda för att träna dina HTML-, och CSS-kunskaper.
+
+
+  \newpage
+  \section{ Ett enkelt dokument }
+    \paragraph{}
+    Skapa en enkel HTML-sida som innehåller allt i nedanstående lista. I denna övning håller vi oss till HTML (struktur) och ignorerar CSS (stil).
+
+    \subsection*{Sidan ska innehålla}
+      \begin{enumerate}
+        \item En rubrik
+        \item En paragraf
+        \item En numrerad lista
+        \item En onumrerad lista
+        \item En nästlad lista (lista i en lista)
+        \item En \href{https://www.google.se/search?q=kitten+meme&tbm=isch}{bild}
+        \item En länk till en annan webbsida på nätet
+      \end{enumerate}
+
+
+  \newpage
+  \section{ Navigation }
+    \paragraph{}
+    I denna uppgift jobbar vi länkar. Tanken är att du ska skapa tre separata sidor -- låt oss kalla dem \texttt{A}, \texttt{B}, och \texttt{C}. Varje sida ska innehålla länkar till någon eller några av de andra sidorna. För länkarna gäller följande:
+
+    \subsection*{Uppgiften}
+      \begin{enumerate}
+        \item \texttt{A} ska länka till \texttt{B} och \texttt{C}
+        \item \texttt{B} ska länka till \texttt{C} och \texttt{A}
+        \item \texttt{C} ska länka till \texttt{A}
+      \end{enumerate}
+
+    \paragraph{}
+    Se till att du skriver någonting på varje sida för att enklare hålla koll på vilken sida som är vilken.
+
+
+
+
+  \newpage
+  \section{ Koppla in ett stylesheet }
+    \paragraph{}
+    I denna uppgift kopplar vi in ett CSS-dokument.
+
+    \subsection*{Uppgiften}
+      \begin{enumerate}
+        \item Skapa en \texttt{.html}-fil
+        \item Skapa en \texttt{.css}-fil
+        \item Lägg följande kod i \texttt{.css}-filen:
+          \begin{lstlisting}
+  body{
+    background: red;
+  }
+          \end{lstlisting}
+        \item Om du nu kopplar in \texttt{.css}-filen i \texttt{.html} med hjälp av \texttt{<link>}-elementet så bör sidan vara röd när du öppnar den i en webbläsare.
+        \item Lägg in lite content i din \texttt{.html}-fil, såsom text, länkar, rubriker etc. och experimentera lite med CSS genom att skriva olika regler för olika element ditt \texttt{.html}-dokument.
+      \end{enumerate}
+
+
+
+  \newpage
+  \section{ Blogginlägg }
+    \paragraph{}
+    I denna uppgift kopplar vi in ett CSS-dokument och arbetar med sidans visuella stil. Utgå ifrån resultatet ifrån ovan uppgift eller skapa en helt ny HTML-sida. Tanken är vi ska skapa en sida som ser ut som ett blogginlägg. Försök få sidan att se så professionell ut som möjligt. Alltså inget Comic Sans :)
+
+    \subsection*{Sidan ska innehålla}
+      \begin{enumerate}
+        \item Bloggpostens titel
+        \item Meta-information om bloggposten, där följande nyckelkord ska särskiljas med hjälp av en annan färg ("färgkodas").
+          \begin{enumerate}
+            \item Skribent
+            \item Datum
+            \item Kategori
+          \end{enumerate}
+        \item En ingress som är visuellt särskiljd ifrån själva inlägget (genom skiljd storlek, typsnitt, eller dyl.)
+        \item En lång brödtext (det faktiska blogginlägget) bestående av flera stycken. Följande behöver förekomma i brödtexten.
+          \begin{enumerate}
+            \item Minst ett ord/begrepp i \emph{Fetstil}
+            \item Minst ett ord/begrepp i \emph{Italics}
+            \item Minst en bild
+            \item Minst en \emph{Blockquote}
+          \end{enumerate}
+      \end{enumerate}
+
+\subsection{ Mouse Over med CSS }
+\paragraph{}
+Vi ska nu träna på att göra mouseover-effekter med hjälp av css. Dels för länkar men även för lite andra grejer. När vi gör hovers i CSS så använder vi något som kallas för \emph{pseudo-elements}. Nedan är ett exempel:
+%\lstset{language=CSS}
+\begin{lstlisting}
+#my-button:hover{
+color: red;
+}
+\end{lstlisting}
+Ovan kod css-regel gör alltså att vi applicerar stilregeln \emph{color: red; } på elementet \emph{\#my-button}, MEN endast när den är \emph{hover}:ed.
+
+\subsubsection*{Uppgiften}
+\begin{enumerate}
+	\item Skapa en ny .html-sida
+	\item Skapa en ny .css-fil
+	\item Koppla in din .css-fil till din .html-sida
+	\item Lägg till en \emph{<div>} i din .html-sida
+	\item Lägg till en rubrik (\emph{<h1>}) i din div
+	\item Lägg till ett stycke text (\emph{<p>}) i din div
+	\item Lägg till en länk (\emph{<a>}) i din div
+	\item Lägg till en bild (\emph{<img>}) i din div
+	\item Skriv en css-regel som gör att bilden får en ram när man håller över den med musen.
+	\item Skriv en css-regel som gör att bildens opacitet sänks när man håller över den med musen.
+	\item Skriv en css-regel som gör att länken byter färg när man håller över den med musen.
+	\item Skriv en css-regel som gör att länken blir fetstilt när man håller över den med musen.
+	\item Skriv en css-regel som gör att div:en byter bakgrundsfärg när man håller över den med musen.
+	\item Skriv en css-regel som gör att texten i div:en byter färg när man håller musen över div:en.
+	\item Skriv en css-regel som gör att bilden i div:en ändrar storlek när man håller musen över div:en.
+	\item Se till att du inte upprepar dig i dina css-regler.
+	Med det menas att följande css...
+	\begin{lstlisting}
+	h1{
+	color: red;
+	}
+	h1{
+	font-weight:bold;
+	}
+	\end{lstlisting}
+	... med fördel alltså kan och bör skrivas som följande:
+	\begin{lstlisting}
+	h1{
+	color: red;
+	font-weight: bold;
+	}
+	\end{lstlisting}
+\end{enumerate}
+
+
+
+
+  \newpage
+  \section{ Centrera ett element }
+    \paragraph{}
+    I denna övning tränar vi på visuell centrering.
+
+    \subsection*{Uppgiften}
+      \begin{enumerate}
+        \item
+          Det som ska centreras är:
+          \begin{enumerate}
+            \item En rubrik
+            \item En bild
+            \item En brödtext
+          \end{enumerate}
+        \item Brödtexten ska vara "vänsterjusterad" i relation till rubriken och bilden men ändå vara i mitten av skärmen.
+        \item Prova gärna att lösa denna uppgift genom alla tre följande metoder:
+          \begin{enumerate}
+            \item \texttt{ text-align:center; }
+            \item \texttt{ position:absolute; }
+            \item \texttt{ float:left; } och \texttt{ float:right }
+          \end{enumerate}
+      \end{enumerate}
+
+
+  \newpage
+  \section{ Spalter \& kolumner }
+    \paragraph{}
+    Denna uppgift går ut på att försöka dela upp en webbsida i spalter. Lägg ut ett antal (börja förslagsvis med två) \texttt{<div>}:ar och ge de genom CSS bredd, höjd och bakgrunds-färg. Detta så att vi kan skilja dem åt.
+
+    \subsection*{Uppgiften}
+      Om du har två \texttt{<div>}:ar är målet att få de bredvid varandra så att den ena \texttt{<div>}:en tar upp 50\% av skärmens bredd och den andra resterande utrymme. Tillsammans ska de täcka upp hela webbläsarens bredd.
+      \begin{enumerate}
+        \item Lägg 2 st \texttt{<div>}:ar bredvid varandra.
+        \item Lägg 3 st \texttt{<div>}:ar bredvid varandra.
+        \item Gör 2 st rader där den första raden innehåller 2 st kolumner och den andra raden 3 st kolumner. Med kolumner menas här \texttt{<div>}:ar bredvid varandra på samma sätt som ovan.
+      \end{enumerate}
+      \paragraph{}
+      Precis som i uppgiften ovan kan vi lösa detta problem på många olika sätt. Prova gärna olika metoder!
+
+
+
+
+ % IDEAS:
+ % responsive
+
+
+\end{document}
